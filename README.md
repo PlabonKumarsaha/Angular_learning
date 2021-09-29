@@ -4,3 +4,4 @@
 * install angular cli from : https://angular.io/cli
 * ng new todo-list
 * Run a project : ng serve
+* Creating new component: ng generate component MyComponents/todos
