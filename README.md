@@ -19,3 +19,11 @@
   styleUrls: ['./app.component.css'] // the visible css page
 })
 ```
+
+
+## New component
+* cd to src
+* cd to app
+* create a component folder in app
+* cd to components
+* ng g component component_name
