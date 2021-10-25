@@ -33,3 +33,7 @@ https://material.angular.io/guide/getting-started
 
 ## Adding a module in angular
 * import API (ex : 'import {MatButtonModule} from '@angular/material/button';') in app.module.ts and add the module name(ex : MatButtonModule) in imports
+
+
+## Routing
+* use app-routing module.ts
