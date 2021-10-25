@@ -37,3 +37,9 @@ https://material.angular.io/guide/getting-started
 
 ## Routing
 * use app-routing module.ts
+* add path the following way
+```
+const routes: Routes = [{
+  path:"sendemail"
+}];
+```
