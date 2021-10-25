@@ -40,6 +40,9 @@ https://material.angular.io/guide/getting-started
 * add path the following way
 ```
 const routes: Routes = [{
-  path:"sendemail"
+  path:"sendemail",
+  component:EmailComponent,
+  pathMatch:"full"
 }];
+
 ```
