@@ -44,5 +44,7 @@ const routes: Routes = [{
   component:EmailComponent,
   pathMatch:"full"
 }];
-
 ```
+
+## Service
+* create new service ng g service service_name
