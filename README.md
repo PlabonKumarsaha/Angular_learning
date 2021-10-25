@@ -27,3 +27,6 @@
 * create a component folder in app
 * cd to components
 * ng g component component_name
+
+## Angular material
+https://material.angular.io/guide/getting-started
