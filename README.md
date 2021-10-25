@@ -48,3 +48,4 @@ const routes: Routes = [{
 
 ## Service
 * create new service ng g service service_name
+* add the service name as provider
