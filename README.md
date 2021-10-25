@@ -15,7 +15,7 @@
 ```
 @Component({
   selector: 'app-root', // through the selector tag a component is called
-  templateUrl: './app.component.html', // chooses the html page
-  styleUrls: ['./app.component.css'] //chooses the css page
+  templateUrl: './app.component.html', // the visible html
+  styleUrls: ['./app.component.css'] // the visible css page
 })
 ```
