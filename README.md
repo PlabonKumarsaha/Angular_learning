@@ -2,8 +2,8 @@
 ## Starting steps
 * Insatll node in pc
 * install angular cli from : https://angular.io/cli
-* ng new todo-list
-* Run a project : ng serve
+* `ng new todo-list`
+* Run a project : `ng serve`
 * Creating new component: ng generate component MyComponents/todos
 
 
@@ -36,7 +36,7 @@ https://material.angular.io/guide/getting-started
 
 
 ## Routing
-* use app-routing module.ts
+* use `app-routing module.ts`
 * add path the following way
 ```
 const routes: Routes = [{
@@ -47,10 +47,10 @@ const routes: Routes = [{
 ```
 
 ## Service
-* create new service ng g service service_name
+* create new service `ng g service service_name`
 * add the service name as provider
 
 ## Module
 * Module is collection of several component
-* create module : ng g m module-name
+* create module : `ng g m module-name`
 * 
