@@ -53,4 +53,15 @@ const routes: Routes = [{
 ## Module
 * Module is collection of several component
 * create module : `ng g m module-name`
-* 
+
+## Input text
+```
+<input type="text" #val/>
+<button (click)=" getVal(val.value)">Get value</button>
+
+ getVal(val:string) {
+    console.warn(val);
+    this.currentValue =val;
+    console.log(this.currentValue)
+  }
+```
