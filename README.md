@@ -65,3 +65,18 @@ const routes: Routes = [{
     console.log(this.currentValue)
   }
 ```
+
+## property Binding
+```
+<input type="text"  [disabled]= "disabledBox" value={{name}}/>
+<br>
+<br>
+<button (click)="enableBox()">Enable ToolBox</button>
+
+ name : string = "Plabon";
+  disabledBox= true;
+  enableBox(){
+    this.disabledBox = false;
+  }
+
+```
