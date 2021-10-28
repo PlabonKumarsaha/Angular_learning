@@ -1,1 +1,10 @@
-<h1>User's component</h1>
+<h1>Property Binder in Angular</h1>
+
+<!-- property Binding-->
+<input type="text"  [disabled]= "disabledBox" value={{name}}/>
+<br>
+<br>
+<button (click)="enableBox()">Enable ToolBox</button>
+<br>
+<br>
+<button *ngIf="show">Checking show</button>

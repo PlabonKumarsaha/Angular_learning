@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+  name : string = "Plabon";
+  disabledBox= true;
+  enableBox(){
+    this.disabledBox = false;
+  }
+
+  show = false;
 
 }

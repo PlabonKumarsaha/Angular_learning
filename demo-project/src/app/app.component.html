@@ -9,3 +9,52 @@
 
 <app-signup></app-signup>
 <button (click)="getName()">Get Name</button>
+<br>
+<br>
+<button (click)="myEvent('Button clicked')">Event button</button>
+
+<br>
+<br>
+<!-- Take input -->
+<input type="text" #box (keyup)="myEvent(box.value)"/>
+
+
+<br>
+<br>
+<!-- only shows inputted text when pressed enter -->
+<input type="text" #box2 (keyup.enter)="myEvent(box2.value)"/>
+
+<br>
+<br>
+<!-- only shows inputted text when pressed space -->
+<input type="text" #box3 (keyup.space)="myEvent(box3.value)"/>
+
+
+<br>
+<br>
+<!-- Blur event. Works when clicked outside -->
+<input type="text" #box4 (blur)="myEvent('blue event')"/>
+
+<div    (mouseover) = "myEvent('hover event')"
+style="background-color:skyblue">
+Mousevent
+</div>
+
+
+<div  (mouseleave) = "myEvent('hover event')"
+style="background-color:rgb(119, 59, 175)">
+mouse leave
+</div>
+
+ 
+<!-- <input type="text"(click)="getVal($event.target.value)" /> -->
+
+<br>
+<br>
+
+<input type="text" #val/>
+<button (click)=" getVal(val.value)">Get value</button>
+{{currentValue}}
+
+
+

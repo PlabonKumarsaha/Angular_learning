@@ -19,4 +19,16 @@ export class AppComponent {
   getName() {
     alert("value")
   }
+  myEvent(evt:any) {
+    console.warn(evt)
+  }
+  currentValue = "";
+
+  getVal(val:string) {
+    console.warn(val);
+    this.currentValue =val;
+    console.log(this.currentValue)
+  }
+
+  
 }
