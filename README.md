@@ -81,4 +81,4 @@ const routes: Routes = [{
 
 ```
 ## adding bootrap
-* command `ng add @ng-bootstrap/ng-bootstrap`
+* command `npm install --save bootstrap`
