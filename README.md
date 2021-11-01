@@ -81,4 +81,4 @@ const routes: Routes = [{
 
 ```
 ## adding bootrap
-* command `npm intsall bootrap --save`
+* command `npm insatll bootrap --save`
