@@ -30,5 +30,23 @@ export class AppComponent {
     console.log(this.currentValue)
   }
 
+  data = ['Plabon','Mas','Anik','Sojib'];
+
+  details =[{
+    'name' : 'Plabon',
+    'Job':'SE'
+  },
+{
+  'name':'Mash',
+  'Job' :'Law'
+},
+{
+  'name':'Anik',
+  'Job':'IPE'
+},
+{
+  'name':'Sajib',
+  'Job' :'network'
+}]
   
 }
