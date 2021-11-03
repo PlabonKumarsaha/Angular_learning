@@ -3,11 +3,14 @@ package com.pks.backend.controller;
 import com.pks.backend.exception.ResourceException;
 import com.pks.backend.model.Employee;
 import com.pks.backend.repository.EmployeeRepository;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/")
@@ -35,7 +38,7 @@ public class EmployeeController {
     }
     //emp update
     @PutMapping("/employees/{id}")
-    public ResponseEntity<Employee>updateEmployee(@PathVariable("id") Long id,@RequestBody Employee updateEmp){
+    public ResponseEntity<Employee>updateEmployee(@PathVariable("id") Long id,@RequestBody Employee updateEmp) {
     Employee emp = employeeRepository.findById(id)
             .orElseThrow(()-> new ResourceException("Employee with"+id+"does not exist"));
     emp.setFname(updateEmp.getFname());
@@ -44,5 +47,16 @@ public class EmployeeController {
 
     Employee finalEmp = employeeRepository.save(emp);
     return ResponseEntity.ok(finalEmp);
+    }
+    @DeleteMapping("/employees/{id}")
+    public ResponseEntity<Map<String,Boolean>> deleteEmpById(@PathVariable("id") Long id) {
+
+        Employee emp = employeeRepository.findById(id)
+                .orElseThrow(()-> new ResourceException("Employee with"+id+"does not exist"));
+        employeeRepository.delete(emp);
+        Map<String,Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return ResponseEntity.ok(response);
+
     }
 }
