@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee } from '../employee';
@@ -41,6 +42,14 @@ export class EmployeeListComponent implements OnInit {
   }
   updateEmployee(id : number){
     this.router.navigate(['update-employee',id])
+  }
+
+  deleteEmployee(id : number){
+    this.employeeService.deleteemployee(id).subscribe(data =>{
+      console.log(data);
+      this.getEmployeeService();
+    })
+
   }
 
 }
