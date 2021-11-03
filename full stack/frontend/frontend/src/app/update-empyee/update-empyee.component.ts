@@ -10,10 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateEmpyeeComponent implements OnInit {
   id : number =0;
-
+  employee : Employee = new Employee();
   constructor(private empService : EmployeeService, private route : ActivatedRoute,
     private router: Router) { }
-  employee : Employee = new Employee();
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
