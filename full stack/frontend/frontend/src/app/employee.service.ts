@@ -8,12 +8,15 @@ import { Employee } from './employee';
 })
 export class EmployeeService {
   private baseUrl ="http://localhost:8088/api/v1/employees";
-  
 
   constructor(private httpClient: HttpClient ) { }
 
   getEmployeeList():Observable<Employee[]>{
-    console.log(this.baseUrl);
+    console.log('base URL'+this.baseUrl);
     return this.httpClient.get<Employee[]>(`${this.baseUrl}`);
+  }
+
+  createEmployee(employee: Employee):Observable<Object>{
+    return this.httpClient.post(`${this.baseUrl}`,employee);
   }
 }
