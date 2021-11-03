@@ -85,3 +85,10 @@ const routes: Routes = [{
 
 ## adding new class
 * command `ng g class className`
+*
+
+## The full stack app
+* CRDU from spring backend
+* CRUD operation from frontend
+* Used modules : Bootstrap , HttpClientModule , FormsModule , activatedrout for finding the id from link
+
