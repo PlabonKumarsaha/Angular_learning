@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class PayServiceService {
 
-  // private baseUrl ="http://10.11.201.169:8080/epaymentApi/v1/api/server";
-  private baseUrl="localhost:8088/epaymentApi/v1/api/server"
+   private baseUrl ="http://10.11.201.169:8080/epaymentApi/v1/api/server";
+  //private baseUrl="localhost:8088/epaymentApi/v1/api/server"
 
 
   constructor(private httpClient : HttpClient) { }
