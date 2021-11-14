@@ -16,7 +16,7 @@ export class PayServiceService {
 
   getValue():Observable<string>{
     console.log('base URL'+this.baseUrl);
-    return this.httpClient.get<string>(`${this.baseUrl}`);
+    return this.httpClient.get<any>(`${this.baseUrl}`);
   }
 
   
