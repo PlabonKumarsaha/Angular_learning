@@ -1,6 +1,7 @@
 <title>Epayment - LogIn</title>
 
-<form>
+{{user |json}}
+<form (ngSubmit)="login()"> 
     <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
         <div class="card card0 border-0">
             <div class="row d-flex">
@@ -48,10 +49,10 @@
                       
                         <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-sm">User ID</h6>
-                            </label> <input class="mb-4" type="text" name="userID" property="userID" value="era@mybank.com" placeholder="Enter a valid User ID"> </div>
+                            </label> <input class="mb-4" type="text" name="userID" [(ngModel)]="user.userid" property="userID" value="era@mybank.com" placeholder="Enter a valid User ID"> </div>
                         <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-sm">Password</h6>
-                            </label> <input type="password" name="password" property="password" value="A1@a" placeholder="Enter a valid password"> </div>
+                            </label> <input type="password" name="password" [(ngModel)]="user.password" property="password" value="A1@a" placeholder="Enter a valid password"> </div>
                         
                         <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center" onClick="doSignIn()">Login</button> </div>
                         <div class="row mb-4 px-3"> </div>

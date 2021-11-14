@@ -11,6 +11,11 @@ import { PayServiceService } from '../pay-service.service';
 export class LoginComponent implements OnInit {
 
   val:string="default value";
+  output:string="default value";
+  public user={
+    userid: ''
+    ,password: ''
+  }
 
   constructor(private payServiceService:PayServiceService,private http:HttpClient) { }
 
@@ -21,12 +26,7 @@ export class LoginComponent implements OnInit {
 
   getServiceCall() {
     console.log('Service called');
-  /*  this.http.get<JSON>('http://10.11.201.169:8080/epaymentApi/v1/api/server').subscribe(data => {
-      console.log('Service called..2');
-      var out = JSON.stringify(data);
-      console.log("===>>>>"+out);
-     // console.log("data",JSON.stringify(data));
-  })  */      
+     
     this.payServiceService.getValue().subscribe((data:any) =>
       {
        // console.log("data",JSON.stringify(data))
@@ -42,6 +42,14 @@ export class LoginComponent implements OnInit {
         
       })
       console.log("end")
+  }
+
+  login(){
+    console.log
+     this.payServiceService.getData(this.user.userid,this.user.password).subscribe(data =>{
+       console.log(data);
+       this.output=data;
+     })
   }
 
 }
