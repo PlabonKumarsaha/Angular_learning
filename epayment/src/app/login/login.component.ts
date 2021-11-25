@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
 import { PayServiceService } from '../pay-service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,9 @@ export class LoginComponent implements OnInit {
     ,password: ''
   }
 
-  constructor(private payServiceService:PayServiceService,private http:HttpClient) { }
+  constructor(private payServiceService:PayServiceService
+    ,private http:HttpClient,
+    private router : Router) { }
 
   ngOnInit(): void {
     this.getServiceCall();
@@ -45,11 +48,13 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log
+    this.router.navigate(['payment'])
+    
      this.payServiceService.getData(this.user.userid,this.user.password).subscribe(data =>{
        console.log(data);
        this.output=data;
      })
+
   }
 
 }

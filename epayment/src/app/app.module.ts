@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PaymentComponent } from './payment/payment.component';
 
 
 
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
-    CreateFormComponent
+    CreateFormComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
