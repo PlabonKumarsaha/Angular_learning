@@ -48,12 +48,19 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.router.navigate(['payment'])
+   
     
      this.payServiceService.getData(this.user.userid,this.user.password).subscribe(data =>{
        console.log(data);
        this.output=data;
      })
+
+     let response = JSON.parse(this.output);
+     if( response.responseCode == "1"){
+      this.router.navigate(['payment'])
+     }else{
+       console.log("apporved")
+     }
 
   }
 
