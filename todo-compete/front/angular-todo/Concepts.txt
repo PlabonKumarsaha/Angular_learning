@@ -1,0 +1,13 @@
+# Check Coding standards
+- ng lint -> check coding standards
+- ng test -> running unit tests
+- ng e2e -> for end to end test
+
+
+# Generate New component
+
+- ng g c welcome  -> App.module.ts is updated and 4 files for a component is added
+
+
+
+* Export : If a module needs to be shifted outside the module then it needs to be exported

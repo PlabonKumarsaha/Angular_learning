@@ -7,7 +7,8 @@ import { Employee } from './employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private baseUrl ="http://localhost:8088/api/v1/employees";
+  //private baseUrl ="http://localhost:8088/api/v1/employees";
+  private baseUrl ="http://10.11.201.241:8088/backend-0.0.1-SNAPSHOT/api/v1/employees";
 
   constructor(private httpClient: HttpClient ) { }
 

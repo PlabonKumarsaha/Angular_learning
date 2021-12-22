@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/")
-@CrossOrigin("http://localhost:60589/")
+@CrossOrigin("http://localhost:4200/")
 public class EmployeeController {
 
     @Autowired

@@ -1,0 +1,14 @@
+<div>
+    <p>create-form works!</p>
+    <!-- -->
+    <select  [(ngModel)]="selectedId" >
+        
+        <option *ngFor="let gender of genders" value="{{gender.id}}">{{gender.name}}</option>
+        
+    </select> 
+    
+<p>{{selectedId}}</p>
+<p>{{genders[selectedId].name}}</p>
+
+</div>
+
