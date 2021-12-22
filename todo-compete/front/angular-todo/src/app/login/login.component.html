@@ -1,1 +1,8 @@
-<p>login works!</p>
+<!-- <router-outlet></router-outlet> -->
+<small *ngIf='invalidLogin'>{{errMessage}}</small>
+<div>
+UserName : <input type="text" name="username" [(ngModel)]="username">
+Password : <input type="password" name="password"  [(ngModel)]="password">
+<button (click)=handleLogin()>Login</button>
+</div>
+
