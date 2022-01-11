@@ -1,4 +1,5 @@
 # Angular_learning
+-Full stack app : spring+angular crud
 ## Starting steps
 * Insatll node in pc
 * install angular cli from : https://angular.io/cli
