@@ -6,13 +6,13 @@
         <div><a routerLink= "" class="navbar-brand">ERA-InfoTech</a> </div>
 
         <ul class="navbar-nav">
-            <li><a routerLink= "/welcome/pks" class = "nav-link">Home</a></li>
-            <li><a routerLink= "/todos" class = "nav-link">Todos</a></li>
+            <li><a *ngIf="hardcodeauthentic.isUserAuthenticated()" routerLink= "/welcome/pks" class = "nav-link">Home</a></li>
+            <li><a *ngIf="hardcodeauthentic.isUserAuthenticated()" routerLink= "/todos" class = "nav-link">Todos</a></li>
         </ul>
 
         <ul class="navbar-nav">
-            <li><a routerLink= "/login" class = "nav-link">Login</a></li>
-            <li><a routerLink= "/logout" class = "nav-link">Logout</a></li>
+            <li><a *ngIf="!hardcodeauthentic.isUserAuthenticated()" routerLink= "/login" class = "nav-link">Login</a></li>
+            <li><a *ngIf="hardcodeauthentic.isUserAuthenticated()" routerLink= "/logout" class = "nav-link">Logout</a></li>
         </ul>
     </nav>
 </header>    
