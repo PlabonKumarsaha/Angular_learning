@@ -23,4 +23,8 @@ export class HardCodedServicesService {
     let user = sessionStorage.getItem("authenticaUserName");
     return !(user == null);
   }
+
+  logout(){
+    sessionStorage.removeItem("authenticaUserName");
+  }
 }
