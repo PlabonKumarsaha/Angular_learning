@@ -7,9 +7,13 @@ import { WelcomeDataService } from '../service/data/welcome-data.service';
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css']
 })
+
 export class WelcomeComponent implements OnInit {
 
+  
+
   userName :string='';
+  messageVal : string='';
   constructor(private actiavtedRoute : ActivatedRoute,
     private service: WelcomeDataService) { }
 
@@ -19,8 +23,16 @@ export class WelcomeComponent implements OnInit {
 
   getWelcomeMessage(){
     //console.log("welcome in get welcome service")
-    console.log( this.service.executeHellowWorldBeanService());
-    this.service.executeHellowWorldBeanService().subscribe();
+   // console.log( this.service.executeHellowWorldBeanService());
+    this.service.executeHellowWorldBeanService().subscribe(
+      response =>this.handleSucessfulResponse(response)
+    );
+    console.log("exc")
+  }
+
+  handleSucessfulResponse(response : any){
+    this.messageVal = response.message;
+    console.log(response.message)
   }
 
 }
