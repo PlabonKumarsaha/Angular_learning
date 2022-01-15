@@ -15,9 +15,12 @@ export class HelloWorld{
 
 export class WelcomeDataService {
 
-
   constructor(private httpclient :HttpClient ) { }
   executeHellowWorldBeanService(){
     return this.httpclient.get<HelloWorld>('http://localhost:8809/hello');
+  }
+
+  executeHellowWorldBeanServiceWithParam(name: string){
+    return this.httpclient.get<HelloWorld>(`http://localhost:8809/hello/${name}`);
   }
 }

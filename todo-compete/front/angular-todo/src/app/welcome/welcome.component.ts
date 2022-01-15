@@ -25,7 +25,20 @@ export class WelcomeComponent implements OnInit {
     //console.log("welcome in get welcome service")
    // console.log( this.service.executeHellowWorldBeanService());
     this.service.executeHellowWorldBeanService().subscribe(
-      response =>this.handleSucessfulResponse(response)
+      response =>this.handleSucessfulResponse(response),
+      error => this.handleErrorMessage(error)
+      
+    );
+    console.log("exc")
+  }
+
+  getWelcomeMessageWithParams(){
+    //console.log("welcome in get welcome service")
+   // console.log( this.service.executeHellowWorldBeanService());
+    this.service.executeHellowWorldBeanServiceWithParam(this.userName).subscribe(
+      response =>this.handleSucessfulResponse(response),
+      error => this.handleErrorMessage(error)
+      
     );
     console.log("exc")
   }
@@ -33,6 +46,12 @@ export class WelcomeComponent implements OnInit {
   handleSucessfulResponse(response : any){
     this.messageVal = response.message;
     console.log(response.message)
+  }
+
+  handleErrorMessage(error : any){
+    console.log("error"+ error);
+    this.getWelcomeMessage = error.error.message;
+    ;
   }
 
 }
