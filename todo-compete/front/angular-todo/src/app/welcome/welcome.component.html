@@ -1,4 +1,15 @@
 
+<div>
+    Welcome {{userName}}.
+  
+    Welcome to our awesome App. 
+  </div>
+  <div>
+  You can manage your todos <a routerLink="/todos">here</a>
+  </div>
+
 <div cass="container">
-    <p>welcome {{userName}}!</p>
+    Click here to get The rest API call
+    <button (click)="getWelcomeMessage()">Get message</button>
 </div>
+
