@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-listtodo',
-  templateUrl: './listtodo.component.html',
-  styleUrls: ['./listtodo.component.css']
-})
+import { TodoDataService } from '../service/data/todo-data.service';
 
 export class Todo{
   constructor(public id : number,
@@ -14,9 +9,17 @@ export class Todo{
 
   }
 }
+@Component({
+  selector: 'app-listtodo',
+  templateUrl: './listtodo.component.html',
+  styleUrls: ['./listtodo.component.css']
+})
+
+
 export class ListtodoComponent implements OnInit {
 
   todos :Todo[]= [];
+
   // todos=[
   //   {"id":"1","description":"nachmu"},
   //   {"id":"2","description":"gaimu"}
@@ -27,9 +30,16 @@ export class ListtodoComponent implements OnInit {
     
   // }
 
-  constructor() { }
+  
+  constructor(private todoservice : TodoDataService) { }
 
   ngOnInit(): void {
+     this.todoservice.retriveAllTodos('abc').subscribe(
+     response =>{
+       console.log("response ",response);
+       this.todos= response;
+     }
+    );
   }
 
 }

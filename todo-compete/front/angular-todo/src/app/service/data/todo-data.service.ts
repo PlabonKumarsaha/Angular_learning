@@ -11,6 +11,6 @@ export class TodoDataService {
     private http:HttpClient
   ) { }
   retriveAllTodos(username: string){
-    return this.http.get<Todo[]>(`http://localhost:8809/${username}/username/todos`)
+    return this.http.get<Todo[]>(`http://localhost:8809/users/${username}/todos`)
   }
 }
