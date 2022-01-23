@@ -1,10 +1,7 @@
 package com.pks.restapi.controller;
 
 import com.pks.restapi.model.Response;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -20,4 +17,8 @@ public class HelloWorldController {
         String returnVal = "Hello from "+message.toString()+".";
         return new Response(returnVal);
     }
+
+
+
+
 }
