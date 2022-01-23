@@ -3,9 +3,12 @@ package com.pks.restapi.controller;
 import com.pks.restapi.model.Todo;
 import com.pks.restapi.services.TodoServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -30,5 +33,19 @@ public class TodoResources {
         return ResponseEntity.notFound().build();
     }
 
+    @PutMapping("/users/{username}/todos/{id}")
+    public ResponseEntity<Todo>updateTodo(@PathVariable("username") String userName
+            ,@PathVariable("id") long id,
+            @RequestBody Todo todo) {
+       Todo todo1= todoServices.save(todo);
+       return new ResponseEntity<Todo>(todo1, HttpStatus.OK);
+    }
 
-}
+    @PostMapping("/users/{username}/todos/")
+    public ResponseEntity<Void>postTodos(@RequestBody Todo todo) {
+        Todo todo1= todoServices.save(todo);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{id}").buildAndExpand(todo1.getId()).toUri();
+        return  ResponseEntity.created(uri).build();
+    }
+
+    }
