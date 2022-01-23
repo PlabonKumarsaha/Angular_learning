@@ -11,5 +11,8 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  saveTodo(){
+    
+  }
 
 }
