@@ -4,7 +4,7 @@
 
     <div class= "alert alert-success" *ngIf='message'>{{message}}</div>
 
-    <caption>Todos</caption>
+
     <thead>
         <tr>
             <th>id</th>
@@ -26,6 +26,7 @@
         </tr>
     </tbody>
     <!-- <td><button (click)="showData()">Show</button></td> -->
+    <button class="btn btn-success" (click)="addTodo()">Add Todo</button>
 </table>
 </div>
 

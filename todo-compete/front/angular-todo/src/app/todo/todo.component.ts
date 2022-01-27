@@ -19,6 +19,7 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.aroute.snapshot.params['id'];
+
     //console.log("dis.id",this.id)
     this.saveTodo(this.id)
   }

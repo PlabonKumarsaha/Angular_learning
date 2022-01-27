@@ -72,5 +72,8 @@ export class ListtodoComponent implements OnInit {
   showData(){
     console.log("all data",this.listData);
       }
+  addTodo(){
+    this.route.navigate(['todos',-1])
+  }
 
 }
