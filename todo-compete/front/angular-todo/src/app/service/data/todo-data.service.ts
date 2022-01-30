@@ -29,4 +29,11 @@ export class TodoDataService {
     console.log("create todo",todo)
     return this.http.post(`http://localhost:8809/users/${username}/todos`,todo)
   }
+
+  createBasicAuthHeader(){
+    let username = "user"
+    let password = "password"
+    let basicAuthHeaderString = "Basic "+window.btoa(username+":"+password);
+    return basicAuthHeaderString;
+  }
 }
