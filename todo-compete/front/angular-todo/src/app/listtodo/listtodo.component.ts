@@ -73,6 +73,7 @@ export class ListtodoComponent implements OnInit {
     console.log("all data",this.listData);
       }
   addTodo(){
+    //passing -1 to notify that the user is trying to add a new component
     this.route.navigate(['todos',-1])
   }
 

@@ -21,7 +21,10 @@ export class TodoComponent implements OnInit {
     this.id = this.aroute.snapshot.params['id'];
 
     //console.log("dis.id",this.id)
-    this.saveTodo(this.id)
+    if(this.id != -1){
+      this.saveTodo(this.id)
+    }
+   
   }
     
   saveTodo(id:number){
@@ -36,6 +39,7 @@ export class TodoComponent implements OnInit {
   }
 
   saveTodoRest(){
+    console.log("in save todo id : ",this.id)
     if(this.id === -1){
 
       this.todoService.createTodo('PKS',this.todo)
@@ -44,13 +48,15 @@ export class TodoComponent implements OnInit {
         this.router.navigate(['todos'])
       })
     }else{
+      console.log( "the todo ",this.todo)
       this.todoService.updateTodo('PKS',this.id,this.todo)
       .subscribe(data=>{
         console.log("update ",data)
         this.router.navigate(['todos'])
       })
     }
-   
   }
+ 
+
 
 }

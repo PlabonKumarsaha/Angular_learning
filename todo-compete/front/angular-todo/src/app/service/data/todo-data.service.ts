@@ -27,6 +27,6 @@ export class TodoDataService {
 
   createTodo(username:string,todo:any){
     console.log("create todo",todo)
-    return this.http.post(`http://localhost:8809/users/${username}/todos/`,todo)
+    return this.http.post(`http://localhost:8809/users/${username}/todos`,todo)
   }
 }
