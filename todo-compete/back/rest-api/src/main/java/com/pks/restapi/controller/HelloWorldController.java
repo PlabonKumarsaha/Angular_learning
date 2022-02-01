@@ -18,6 +18,13 @@ public class HelloWorldController {
         return new Response(returnVal);
     }
 
+    @GetMapping("/basicauth")
+    Response helloWorld3(){
+        String returnVal = "Basic auth";
+        return new Response(returnVal);
+    }
+
+
 
 
 
