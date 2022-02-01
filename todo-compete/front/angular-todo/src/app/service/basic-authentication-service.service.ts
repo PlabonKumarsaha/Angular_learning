@@ -68,10 +68,18 @@ export class BasicAuthenticationServiceService {
 
   getAuthenticatedUSer(){
     let user = sessionStorage.getItem("authenticaUserName")
-    return !(user === null)
+   // return !(user === null)
+   return user;
   }
 
+  getAuthenticatedPassword(){
+    let pass = sessionStorage.getItem("authenticaPassword")
+   return pass;
+  }
+
+
   getAuthenticatedToken(){
+    console.log("session log ",sessionStorage.getItem("token"))
       return sessionStorage.getItem("token")
   }
 

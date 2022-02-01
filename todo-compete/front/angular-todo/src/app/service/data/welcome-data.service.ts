@@ -21,19 +21,20 @@ export class WelcomeDataService {
   }
 
   executeHellowWorldBeanServiceWithParam(name: string){
-    let basicHeaderString = this.createBasicAuthHeader()
+    // let basicHeaderString = this.createBasicAuthHeader()
 
-    let headers = new HttpHeaders({
-      Authorization : basicHeaderString
-    })
-    return this.httpclient.get<HelloWorld>(`http://localhost:8809/hello/${name}`,
-    {headers});
+    // let headers = new HttpHeaders({
+    //   Authorization : basicHeaderString
+    // })
+    return this.httpclient.get<HelloWorld>(`http://localhost:8809/hello/${name}`);
+    
+   //, {headers});
   }
 
-  createBasicAuthHeader(){
-    let username = "user"
-    let password = "password"
-    let basicAuthHeaderString = "Basic "+window.btoa(username+":"+password);
-    return basicAuthHeaderString;
-  }
+  // createBasicAuthHeader(){
+  //   let username = "user"
+  //   let password = "password"
+  //   let basicAuthHeaderString = "Basic "+window.btoa(username+":"+password);
+  //   return basicAuthHeaderString;
+  // }
 }
