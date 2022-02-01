@@ -2,7 +2,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HelloWorld } from './data/welcome-data.service';
 import { map, catchError } from 'rxjs/operators';
+import { API_URL } from '../app.constants';
 
+export const TOKEN = 'token';
+export const USERNAME = 'authenticaUserName';
+export const PASSWORD = 'authenticaPassword';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +18,8 @@ export class BasicAuthenticationServiceService {
   authenticate(username: string,password: string){
     console.log("before logged in "+this.isUserAuthenticated())
     if(username === 'pks' && password ==='abc'){
-      sessionStorage.setItem("authenticaUserName",username);
-      sessionStorage.setItem("authenticaPassword",password);
+      sessionStorage.setItem(USERNAME,username);
+      sessionStorage.setItem(PASSWORD,password);
       console.log("after logged in "+this.isUserAuthenticated())
       return true;
     }else{
@@ -24,7 +28,8 @@ export class BasicAuthenticationServiceService {
   }
 
   executeHellowWorldBeanService(){
-    return this.httpclient.get<AuthenticatinBean>('http://localhost:8809/basicauth');
+    return this.httpclient.get<AuthenticatinBean>(`${API_URL}/basicauth`);
+    // return this.httpclient.get<AuthenticatinBean>('http://localhost:8809/basicauth');
   }
 
   executeBasicAuthenticationService(username : string, password : string){
@@ -35,13 +40,13 @@ export class BasicAuthenticationServiceService {
     let headers = new HttpHeaders({
       Authorization : basicHeaderString
     })
-    return this.httpclient.get<AuthenticatinBean>(`http://localhost:8809/basicauth`,
+    return this.httpclient.get<AuthenticatinBean>(`${API_URL}/basicauth`,
     {headers}).pipe(
       map(
        (data:any) =>{
-          sessionStorage.setItem("authenticaUserName",username);
+          sessionStorage.setItem(USERNAME,username);
           sessionStorage.setItem("token",basicHeaderString);
-          sessionStorage.setItem("authenticaPassword",password);
+          sessionStorage.setItem(PASSWORD,password);
           return data
         }
       )
@@ -54,8 +59,9 @@ export class BasicAuthenticationServiceService {
   }
 
   logout(){
-    sessionStorage.removeItem("authenticaUserName");
-    sessionStorage.removeItem("token");
+    sessionStorage.removeItem(USERNAME);
+    sessionStorage.removeItem(PASSWORD);
+    sessionStorage.removeItem(TOKEN);
 
   }
 
@@ -67,13 +73,13 @@ export class BasicAuthenticationServiceService {
   }
 
   getAuthenticatedUSer(){
-    let user = sessionStorage.getItem("authenticaUserName")
+    let user = sessionStorage.getItem(USERNAME)
    // return !(user === null)
    return user;
   }
 
   getAuthenticatedPassword(){
-    let pass = sessionStorage.getItem("authenticaPassword")
+    let pass = sessionStorage.getItem(PASSWORD)
    return pass;
   }
 
