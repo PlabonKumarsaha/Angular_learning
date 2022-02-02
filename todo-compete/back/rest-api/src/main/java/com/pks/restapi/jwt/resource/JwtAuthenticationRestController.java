@@ -1,5 +1,4 @@
 package com.pks.restapi.jwt.resource;
-
 import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;

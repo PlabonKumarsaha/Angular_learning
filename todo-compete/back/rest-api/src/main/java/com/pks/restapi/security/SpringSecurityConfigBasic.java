@@ -7,8 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 
-@Configuration
-@EnableWebSecurity
+
 public class SpringSecurityConfigBasic extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -20,8 +19,8 @@ public class SpringSecurityConfigBasic extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
+                //.formLogin().and()
                 .httpBasic();
-
         };
 
 }
