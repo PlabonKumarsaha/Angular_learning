@@ -11,11 +11,11 @@ public class RestApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestApiApplication.class, args);
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		for (int i = 1; i<=10; i++){
-			String encPass = encoder.encode("123456");
-			System.out.println(encPass);
-		}
+//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+//		for (int i = 1; i<=10; i++){
+//			String encPass = encoder.encode("123456");
+//			System.out.println(encPass);
+//		}
 	}
 
 }
